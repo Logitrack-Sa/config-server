@@ -11,3 +11,9 @@ Base actual: README, plantilla de PR, formulario de issues y revisor IA en GitHu
 La IA devuelve hallazgos sobre PR y sugerencias de pruebas; no planifica, no aprueba ni integra. CI de esta base verifica automatización. Las pruebas Maven y Docker se agregan en sus issues cuando exista la aplicación.
 
 No incorporar credenciales, claves JWT privadas ni archivos .env. Java25 para aplicaciones; config-repo es únicamente Git de propiedades no sensibles dev/prod.
+
+## Punto de partida del servidor
+
+El backend de configuración será https://github.com/Logitrack-Sa/config-repo. El servidor expondrá propiedades para shipment-service, courier-service y security-service con perfiles dev/prod. No necesita base MySQL propia.
+
+La implementación pendiente debe seleccionar una versión de Spring Cloud compatible con el Boot del equipo, habilitar EnableConfigServer y verificar respuestas mediante un Git de prueba. La imagen Java25 debe ejecutarse independientemente; credenciales Git por entorno si fueran necesarias.
