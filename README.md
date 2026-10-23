@@ -17,3 +17,9 @@ No incorporar credenciales, claves JWT privadas ni archivos .env. Java25 para ap
 El backend de configuración será https://github.com/Logitrack-Sa/config-repo. El servidor expondrá propiedades para shipment-service, courier-service y security-service con perfiles dev/prod. No necesita base MySQL propia.
 
 La implementación pendiente debe seleccionar una versión de Spring Cloud compatible con el Boot del equipo, habilitar EnableConfigServer y verificar respuestas mediante un Git de prueba. La imagen Java25 debe ejecutarse independientemente; credenciales Git por entorno si fueran necesarias.
+
+## CI independiente (#60)
+
+Calidad del repositorio valida Markdown y estructura. Mientras no exista POM no ejecuta ni declara tests Java. En los repositorios de aplicación, al agregar POM se habilita Maven verify con MySQL efímero; al agregar Dockerfile se habilita la construcción, sin publicar imágenes. Mantener fixtures HTTP/JWT/Git propios: ningún job descarga main de otro servicio. Las pruebas de aplicación deben usar perfil test y dobles locales. El PR se ejecuta sin secretos, con token de solo lectura; la revisión IA conserva su workflow separado.
+
+La integración global se ejecuta manualmente desde shipment-service cuando estén publicadas las cuatro imágenes, según su issue #61. No bloquea los checks de este repositorio. config-repo contiene propiedades Git y no compila una aplicación.
