@@ -1,0 +1,28 @@
+name: CI Config Server
+
+on:
+  push:
+    branches: [ main, "feat/**", "fix/**" ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Java 25 (Eclipse Temurin)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '25'
+          cache: 'maven'
+
+      - name: Dar permisos de ejecución a Maven Wrapper
+        run: chmod +x mvnw
+
+      - name: Ejecutar verificación y pruebas (mvnw verify)
+        run: ./mvnw verify
