@@ -59,13 +59,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<!-- Configuración del Plugin de Docker -->
-				<configuration>
-					<image>
-						<name>jzapana/${project.artifactId}</name>
-						<builder>paketobuildpacks/builder-jammy-base:latest</builder>
-					</image>
-				</configuration>
+
 			</plugin>
 		</plugins>
 	</build>

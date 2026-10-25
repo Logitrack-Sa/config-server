@@ -1,24 +1,40 @@
 spring:
-  main:
-     allow-bean-definition-overriding: true
   application:
     name: config-server
   cloud:
     config:
       server:
+        accept-empty: false
+        health:
+          repositories:
+            shipment:
+              name: shipment-service
+              profiles: dev,prod
+            courier:
+              name: courier-service
+              profiles: dev,prod
+            security:
+              name: security-service
+              profiles: dev,prod
         git:
-          # URL del repositorio Git donde están las properties
-          uri: https://github.com/Logitrack-Sa/config-repo
-          default-label: main
+          uri: ${CONFIG_GIT_URI:https://github.com/Logitrack-Sa/config-repo.git}
+          default-label: ${CONFIG_GIT_LABEL:main}
+          username: ${CONFIG_GIT_USERNAME:}
+          password: ${CONFIG_GIT_PASSWORD:}
           clone-on-start: true
-
+          timeout: 5
 server:
-  # Puerto oficial del contrato para el Config Server
-  port: 8888
-
+  address: ${SERVER_ADDRESS:127.0.0.1}
+  port: ${SERVER_PORT:8888}
+  error:
+    include-message: never
+    include-stacktrace: never
 management:
   endpoints:
     web:
       exposure:
-        # Exponer endpoints de Actuator para comprobar la salud del servicio
-        include: health, info
+        include: health
+  endpoint:
+    health:
+      show-details: never
+      show-components: never
