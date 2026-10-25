@@ -16,7 +16,9 @@ for app in ("shipment-service", "courier-service", "security-service"):
     for profile in ("dev", "prod"):
         with urllib.request.urlopen(f"{base}/{app}/{profile}/main", timeout=5) as response:
             result = json.load(response)
-        source = result["propertySources"][0]["source"]
+        source = {}
+        for entry in reversed(result["propertySources"]):
+            source.update(entry["source"])
         assert source["fixture.service"] == app
         assert source["fixture.profile"] == profile
         assert len(result["version"]) == 40

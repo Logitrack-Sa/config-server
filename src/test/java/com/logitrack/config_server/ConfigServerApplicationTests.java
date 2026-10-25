@@ -3,6 +3,8 @@ package com.logitrack.config_server;
 import com.fasterxml.jackson.databind.JsonNode;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.Map;
 import org.eclipse.jgit.api.Git;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
@@ -47,8 +49,13 @@ class ConfigServerApplicationTests {
         assertThat(body.path("name").asText()).isEqualTo(application);
         assertThat(body.path("profiles").get(0).asText()).isEqualTo(profile);
         assertThat(body.path("version").asText()).hasSize(40);
+        Map<String,String> values = new HashMap<>();
         var sources = body.path("propertySources");
-        assertThat(sources.toString()).contains(application, profile, "${DB_PASSWORD}");
+        for (int index = sources.size()-1; index >= 0; index--) {
+            sources.get(index).path("source").fields().forEachRemaining(entry -> values.put(entry.getKey(), entry.getValue().asText()));
+        }
+        assertThat(values).containsEntry("fixture.service", application)
+                .containsEntry("fixture.profile", profile).containsEntry("spring.datasource.password", "${DB_PASSWORD}");
     }
     @Test void healthDoesNotExposeGitOrCredentials() {
         var response = http.getForEntity("/actuator/health", JsonNode.class);

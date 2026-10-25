@@ -14,6 +14,6 @@ Solo /actuator/health está expuesto, sin detalles/componentes. Las propiedades 
 
 `./mvnw clean verify`: Git temporal local con rama main, seis combinaciones de servicio/perfil, placeholders conservados, health mínimo y configuración inexistente. Sin GitHub ni bases de otros repositorios.
 
-`docker build -t config-server:local .`; ejecutar con CONFIG_GIT_URI y CONFIG_GIT_LABEL. Para Git de prueba montado: file:/fixture/ con montaje de solo lectura. La imagen separa build/runtime, excluye tests/secretos y usa UID 10001. CI construye la imagen y verifica HTTP con un Git local, sin servicios consumidores. La publicación de imágenes pertenece a otra issue.
+`docker build -t config-server:local .`; ejecutar con CONFIG_GIT_URI y CONFIG_GIT_LABEL. Para Git de prueba montado: file:/fixture/ con permisos de escritura para UID 10001, porque JGit actualiza el índice/checkout local. Usar una copia descartable del fixture, nunca el checkout de trabajo. Con Git remoto, la copia local del servidor también debe ser escribible. La imagen separa build/runtime, excluye tests/secretos y usa UID 10001. CI construye la imagen y verifica HTTP con un Git local, sin servicios consumidores. La publicación de imágenes pertenece a otra issue.
 
 El PR #6 de Damián aborda la CI del servicio; esta corrección conserva su rama y limita cambios a los criterios iniciales de #1. [Contrato](https://github.com/Logitrack-Sa/shipment-service/blob/main/docs/sprint2/CONTRATOS.md) · [Tablero](https://github.com/orgs/Logitrack-Sa/projects/2).

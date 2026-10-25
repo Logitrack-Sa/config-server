@@ -33,7 +33,8 @@ jobs:
           git -C target/smoke-git add .
           git -C target/smoke-git -c user.name=Fixture -c user.email=fixture@example.test commit -m 'Configuración de prueba'
           chmod -R a+rX target/smoke-git
-          docker run -d --name config-smoke -p 127.0.0.1:8888:8888 -e CONFIG_GIT_URI=file:/fixture/ --mount type=bind,src="$PWD/target/smoke-git",dst=/fixture,readonly config-server:bootstrap
+          sudo chown -R 10001:10001 target/smoke-git
+          docker run -d --name config-smoke -p 127.0.0.1:8888:8888 -e CONFIG_GIT_URI=file:/fixture/ --mount type=bind,src="$PWD/target/smoke-git",dst=/fixture config-server:bootstrap
           test "$(docker exec config-smoke id -u)" = 10001
       - name: Verificar HTTP de la imagen
         run: python3 .github/scripts/smoke_config.py
