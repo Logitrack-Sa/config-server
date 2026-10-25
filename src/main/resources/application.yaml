@@ -1,0 +1,24 @@
+spring:
+  main:
+     allow-bean-definition-overriding: true
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          # URL del repositorio Git donde están las properties
+          uri: https://github.com/Logitrack-Sa/config-repo
+          default-label: main
+          clone-on-start: true
+
+server:
+  # Puerto oficial del contrato para el Config Server
+  port: 8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # Exponer endpoints de Actuator para comprobar la salud del servicio
+        include: health, info
