@@ -24,23 +24,11 @@ jobs:
         run: node .github/scripts/check_repository.mjs
 
   java:
-    name: Maven y MySQL aislados
+    name: Maven y Git de prueba aislados
     needs: repository
     if: needs.repository.outputs.maven == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    services:
-      mysql:
-        image: mysql:8.4
-        env:
-          MYSQL_DATABASE: service_test
-          MYSQL_USER: service_test
-          MYSQL_PASSWORD: integration-only
-          MYSQL_ROOT_PASSWORD: integration-root-only
-        ports: ['3306:3306']
-        options: >-
-          --health-cmd="mysqladmin ping -h 127.0.0.1"
-          --health-interval=5s --health-timeout=5s --health-retries=30
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
@@ -51,10 +39,6 @@ jobs:
           java-version: '25'
           cache: maven
       - name: Verificar con fixtures del propio servicio
-        env:
-          SPRING_DATASOURCE_URL: jdbc:mysql://127.0.0.1:3306/service_test?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
-          SPRING_DATASOURCE_USERNAME: service_test
-          SPRING_DATASOURCE_PASSWORD: integration-only
         run: mvn --batch-mode --no-transfer-progress -DfailIfNoTests=true verify
   image:
     name: Construir imagen sin publicar
