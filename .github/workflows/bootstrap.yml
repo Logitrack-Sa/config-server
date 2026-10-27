@@ -1,0 +1,46 @@
+name: Verificar base Config Server
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad
+        with:
+          distribution: temurin
+          java-version: '25'
+          cache: maven
+      - name: Verificar con Git local sin consumidores
+        run: ./mvnw --batch-mode --no-transfer-progress clean verify
+      - name: Construir imagen
+        run: docker build -t config-server:bootstrap .
+      - name: Preparar Git local y arrancar contenedor
+        run: |
+          mkdir -p target/smoke-git
+          git -C target/smoke-git init --initial-branch=main
+          for app in shipment-service courier-service security-service; do
+            for profile in dev prod; do
+              printf 'fixture.service=%s\nfixture.profile=%s\n' "$app" "$profile" > "target/smoke-git/$app-$profile.properties"
+            done
+          done
+          git -C target/smoke-git add .
+          git -C target/smoke-git -c user.name=Fixture -c user.email=fixture@example.test commit -m 'Configuración de prueba'
+          chmod -R a+rX target/smoke-git
+          sudo chown -R 10001:10001 target/smoke-git
+          docker run -d --name config-smoke -p 127.0.0.1:8888:8888 -e CONFIG_GIT_URI=file:/fixture/ --mount type=bind,src="$PWD/target/smoke-git",dst=/fixture config-server:bootstrap
+          test "$(docker exec config-smoke id -u)" = 10001
+      - name: Verificar HTTP de la imagen
+        run: python3 .github/scripts/smoke_config.py
+      - name: Mostrar logs ante fallo
+        if: failure()
+        run: docker logs --tail 100 config-smoke || true
+      - name: Detener contenedor de prueba
+        if: always()
+        run: docker stop config-smoke || true
