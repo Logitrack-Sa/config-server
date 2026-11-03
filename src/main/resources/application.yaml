@@ -19,6 +19,10 @@ spring:
               name: security-service
               profiles: dev,prod
               label: ${CONFIG_GIT_LABEL:main}
+            gateway:
+              name: api-gateway
+              profiles: dev,prod
+              label: ${CONFIG_GIT_LABEL:main}
         git:
           uri: ${CONFIG_GIT_URI:https://github.com/Logitrack-Sa/config-repo.git}
           default-label: ${CONFIG_GIT_LABEL:main}
