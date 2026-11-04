@@ -9,6 +9,6 @@ RUN groupadd --gid 10001 app && useradd --uid 10001 --gid 10001 app
 WORKDIR /app
 COPY --from=build --chown=10001:10001 /build/target/config-server-0.0.1-SNAPSHOT.jar app.jar
 USER 10001:10001
-ENV SERVER_ADDRESS=0.0.0.0
+ENV SERVER_ADDRESS=0.0.0.0 XDG_CONFIG_HOME=/tmp/.config
 EXPOSE 8888
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]

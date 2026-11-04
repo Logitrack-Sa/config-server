@@ -15,9 +15,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
+import org.springframework.test.context.ActiveProfiles;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@ActiveProfiles("sprint3")
 class ConfigServerApplicationTests {
     @TempDir static Path fixture;
     @Autowired TestRestTemplate http;
@@ -26,7 +28,7 @@ class ConfigServerApplicationTests {
     static void gitFixture(DynamicPropertyRegistry properties) throws Exception {
         Path repo = Files.createDirectory(fixture.resolve("repository"));
         try (Git git = Git.init().setInitialBranch("main").setDirectory(repo.toFile()).call()) {
-            for (String service : new String[]{"shipment-service", "courier-service", "security-service"}) {
+            for (String service : new String[]{"shipment-service", "courier-service", "security-service", "api-gateway", "eureka-server"}) {
                 Files.writeString(repo.resolve(service+".properties"), "fixture.service="+service+"\n");
                 for (String profile : new String[]{"dev", "prod"}) {
                     Files.writeString(repo.resolve(service+"-"+profile+".properties"),
@@ -41,7 +43,7 @@ class ConfigServerApplicationTests {
     }
 
     @ParameterizedTest
-    @CsvSource({"shipment-service,dev", "shipment-service,prod", "courier-service,dev", "courier-service,prod", "security-service,dev", "security-service,prod"})
+    @CsvSource({"shipment-service,dev", "shipment-service,prod", "courier-service,dev", "courier-service,prod", "security-service,dev", "security-service,prod", "api-gateway,dev", "api-gateway,prod", "eureka-server,dev", "eureka-server,prod"})
     void servesAllServiceProfilesFromGit(String application, String profile) {
         var response = http.getForEntity("/"+application+"/"+profile+"/main", JsonNode.class);
         assertThat(response.getStatusCode().value()).isEqualTo(200);

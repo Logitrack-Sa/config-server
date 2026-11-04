@@ -1,0 +1,9 @@
+spring.cloud.config.server.health.repositories:
+  gateway:
+    name: api-gateway
+    profiles: dev,prod
+    label: ${spring.cloud.config.server.git.default-label}
+  eureka:
+    name: eureka-server
+    profiles: dev,prod
+    label: ${spring.cloud.config.server.git.default-label}

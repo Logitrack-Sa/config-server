@@ -1,0 +1,323 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2065.111083333333 1998.1000000000001" width="2065.111083333333" height="1998.1000000000001" style="--bg:#1F1F1F;--fg:#CCCCCC;--line:#CCCCCC;--accent:#0078D4;--muted:#CCCCCCCC;--surface:#181818;--border:#CCCCCC;background:var(--bg)">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<g class="subgraph" data-id="G_CONFIG" data-label="Infraestructura: config-server &amp; config-repo (:8888)">
+  <rect x="257.478" y="40" width="196.95600000000002" height="340.80000000000007" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="257.478" y="40" width="196.95600000000002" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="269.478" y="54" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Infraestructura: config-server &amp; config-repo (:8888)</text>
+</g>
+<g class="subgraph" data-id="G_SECURITY" data-label="Repositorio: security-service (:8083 | DB: security_db)">
+  <rect x="767.0773750000001" y="40" width="478.241" height="542.4000000000001" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="767.0773750000001" y="40" width="478.241" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="779.0773750000001" y="54" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Repositorio: security-service (:8083 | DB: security_db)</text>
+<g class="subgraph" data-id="SEC_DOMAIN" data-label="Modelo de Identidad y Acceso">
+  <rect x="819.0773750000001" y="84" width="410.241" height="305.90000000000003" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="819.0773750000001" y="84" width="410.241" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="831.0773750000001" y="98" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Modelo de Identidad y Acceso</text>
+</g>
+</g>
+<g class="subgraph" data-id="G_COURIER" data-label="Repositorio: courier-service (:8082 | DB: courier_db)">
+  <rect x="1080.9330833333333" y="1633.3000000000002" width="904.1779999999999" height="316.8" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="1080.9330833333333" y="1633.3000000000002" width="904.1779999999999" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1092.9330833333333" y="1647.3000000000002" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Repositorio: courier-service (:8082 | DB: courier_db)</text>
+<g class="subgraph" data-id="COURIER_DOMAIN" data-label="Modelo de Repartidores">
+  <rect x="1421.9380833333332" y="1677.3000000000002" width="547.173" height="164.5" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="1421.9380833333332" y="1677.3000000000002" width="547.173" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1433.9380833333332" y="1691.3000000000002" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Modelo de Repartidores</text>
+</g>
+</g>
+<g class="subgraph" data-id="G_SHIPMENT" data-label="Repositorio: shipment-service (:8081 | DB: shipment_db)">
+  <rect x="589.052" y="674.7" width="694.732" height="837.7" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="589.052" y="674.7" width="694.732" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="601.052" y="688.7" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Repositorio: shipment-service (:8081 | DB: shipment_db)</text>
+<g class="subgraph" data-id="SHIPMENT_DOMAIN" data-label="Modelo de Envíos y Clientes">
+  <rect x="661.052" y="718.7" width="606.732" height="601.2" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="661.052" y="718.7" width="606.732" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="673.052" y="732.7" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Modelo de Envíos y Clientes</text>
+</g>
+</g>
+<polyline class="edge" data-from="AUTH_CTRL" data-to="USER" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Gestiona" points="918.5516250000001,542.4000000000001 918.5516250000001,554.4000000000001 809.0773750000001,554.4000000000001 809.0773750000001,582.4000000000001 2005.1110833333332,582.4000000000001 2005.1110833333332,148.7 42,148.7 52,148.7 2005.1110833333332,148.7 2005.1110833333332,188.7 835.0773750000001,188.7" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="COURIER_CTRL" data-to="COURIER" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Gestiona disponibilidad" points="1249.4355833333334,1803.3500000000001 1249.4355833333334,1922.1000000000001 1330.6868333333332,1922.1000000000001 1330.6868333333332,1950.1000000000001 237.478,1950.1000000000001 237.478,288.8 249.7537499999999,288.8 331.0049999999999,288.8 331.0049999999999,140.25 341.0049999999999,140.25 237.478,140.25 237.478,1773.5500000000002 1437.9380833333332,1773.5500000000002" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="SHIPMENT_CTRL" data-to="SHIPMENT" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="Orquesta envíos" points="818.8323333333333,1472.4 818.8323333333333,1484.4 651.052,1484.4 651.052,1512.4 2017.1110833333332,1512.4 2017.1110833333332,253.15000000000003 62,253.15000000000003 72,253.15000000000003 2017.1110833333332,253.15000000000003 2017.1110833333332,927.8500000000001 677.052,927.8500000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="C_SERVER" data-to="Bootstrap" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="&quot;HTTP GET" points="355.956,364.8 355.956,380.80000000000007 355.956,485.1000000000001 355.605,485.1000000000001 355.605,497.1000000000001" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="C_SERVER" data-to="Bootstrap" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="&quot;HTTP GET" points="397.19500000000005,364.8 397.19500000000005,380.80000000000007 397.19500000000005,416.80000000000007 432.254,416.80000000000007 432.254,485.1000000000001 380.54200000000003,485.1000000000001 380.542,497.1000000000001" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="C_SERVER" data-to="Bootstrap" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="&quot;HTTP GET" points="314.717,364.8 314.717,380.80000000000007 314.717,416.80000000000007 279.658,416.80000000000007 279.658,485.1000000000001 330.668,485.1000000000001 330.668,497.1000000000001" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="AUTH_CTRL" data-to="G_COURIER" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="Distribución de Clave Pública RSA (RS256)" points="1031.040125,542.4000000000001 1031.040125,582.4000000000001 1031.040125,662.7 1416.784,662.7 1416.784,1609.3000000000002 1080.9330833333333,1609.3000000000002 1080.9330833333333,1633.3000000000002" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="AUTH_CTRL" data-to="G_SHIPMENT" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="Distribución de Clave Pública RSA (RS256)" points="974.795875,542.4000000000001 974.795875,582.4000000000001 974.795875,594.4000000000001 589.052,594.4000000000001 589.052,674.7" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="USER" data-to="V" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="&quot;1..1" points="1011.148375,188.7 1229.318375,188.7" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="USER" data-to="V" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="&quot;1..1" points="1011.148375,219.05 1229.318375,219.05" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="SHIPMENT_CTRL" data-to="COURIER_CTRL" data-style="thick" data-arrow-start="false" data-arrow-end="true" data-label="REST HTTP / JSON [Bearer Token]
+GET /couriers/{id}/availability (Validar asignación)
+GET /internal/couriers/{id}/status (Validar EN_RUTA)" points="913.5846666666666,1472.4 913.5846666666666,1512.4 913.5846666666666,1621.3000000000002 1249.4355833333334,1621.3000000000002 1249.4355833333334,1633.3000000000002 1249.4355833333334,1715.7500000000002" fill="none" stroke="var(--_line)" stroke-width="2" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="SHIPMENT" data-to="Referencia" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="&quot;N..1" points="873.13,948.0833333333334 897.13,948.0833333333334 897.13,973.2 1267.784,973.2" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="C_REPO" data-to="Clona" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="&quot;1..1" points="339.2835,137.8 339.2835,261.75" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="USER" data-to="Posee" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="&quot;1..*" points="1011.148375,158.35 1132.836375,158.35" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="COURIER" data-to="Estado" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="&quot;1..1" points="1606.5990833333333,1773.5500000000002 1724.7230833333333,1773.5500000000002" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="CUSTOMER" data-to="Genera" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="&quot;1..*" points="799.771,1093.35 921.4590000000001,1093.35" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="SHIPMENT" data-to="Compone" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="&quot;1..2" points="873.13,907.6166666666668 897.13,907.6166666666668 897.13,846.0500000000001 1057.188,846.0500000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="SHIPMENT" data-to="Controlado" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="&quot;1..1" points="873.13,887.3833333333334 885.13,887.3833333333334 885.13,781.1500000000001 1057.188,781.1500000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="SHIPMENT" data-to="Registra" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="&quot;1..*" points="873.13,968.3166666666667 885.13,968.3166666666667 885.13,1002.6500000000001 1057.188,1002.6500000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="SHIPMENT" data-to="FEE" data-style="dotted" data-arrow-start="false" data-arrow-end="true" data-label="Usa para cotizar" points="873.13,927.8500000000001 1057.188,927.85" fill="none" stroke="var(--_line)" stroke-width="1" stroke-dasharray="4 4" marker-end="url(#arrowhead)" />
+<g class="edge-label" data-from="AUTH_CTRL" data-to="USER" data-label="Gestiona">
+  <rect x="296.97212500000023" y="133.54999999999998" width="59.230000000000004" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="326.58712500000024" y="148.7" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Gestiona</text>
+</g>
+<g class="edge-label" data-from="COURIER_CTRL" data-to="COURIER" data-label="Gestiona disponibilidad">
+  <rect x="267.82899999999984" y="263.7499999999998" width="126.35200000000003" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="331.0049999999999" y="278.89999999999975" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Gestiona disponibilidad</text>
+</g>
+<g class="edge-label" data-from="SHIPMENT_CTRL" data-to="SHIPMENT" data-label="Orquesta envíos">
+  <rect x="421.6511666666671" y="238.00000000000003" width="99.028" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="471.1651666666671" y="253.15000000000003" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Orquesta envíos</text>
+</g>
+<g class="edge-label" data-from="C_SERVER" data-to="Bootstrap" data-label="&quot;HTTP GET">
+  <rect x="319.456" y="423.80000000000007" width="72.298" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="355.605" y="438.95000000000005" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">&quot;HTTP GET</text>
+</g>
+<g class="edge-label" data-from="C_SERVER" data-to="Bootstrap" data-label="&quot;HTTP GET">
+  <rect x="395.754" y="423.80000000000007" width="72.298" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="431.903" y="438.95000000000005" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">&quot;HTTP GET</text>
+</g>
+<g class="edge-label" data-from="C_SERVER" data-to="Bootstrap" data-label="&quot;HTTP GET">
+  <rect x="243.15800000000002" y="423.80000000000007" width="72.298" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="279.307" y="438.95000000000005" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">&quot;HTTP GET</text>
+</g>
+<g class="edge-label" data-from="AUTH_CTRL" data-to="G_COURIER" data-label="Distribución de Clave Pública RSA (RS256)">
+  <rect x="1307.784" y="1560.0000000000002" width="217.82800000000003" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="1416.698" y="1575.1500000000003" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Distribución de Clave Pública RSA (RS256)</text>
+</g>
+<g class="edge-label" data-from="AUTH_CTRL" data-to="G_SHIPMENT" data-label="Distribución de Clave Pública RSA (RS256)">
+  <rect x="480.052" y="601.4000000000001" width="217.82800000000003" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="588.966" y="616.5500000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Distribución de Clave Pública RSA (RS256)</text>
+</g>
+<g class="edge-label" data-from="USER" data-to="V" data-label="&quot;1..1">
+  <rect x="-4" y="-5" width="30.124000000000002" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="11.062000000000001" y="10.15" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">&quot;1..1</text>
+</g>
+<g class="edge-label" data-from="USER" data-to="V" data-label="&quot;1..1">
+  <rect x="-4" y="-5" width="30.124000000000002" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="11.062000000000001" y="10.15" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">&quot;1..1</text>
+</g>
+<g class="edge-label" data-from="SHIPMENT_CTRL" data-to="COURIER_CTRL" data-label="REST HTTP / JSON [Bearer Token]
+GET /couriers/{id}/availability (Validar asignación)
+GET /internal/couriers/{id}/status (Validar EN_RUTA)">
+  <rect x="780.5846666666666" y="1555.4" width="265.34800000000007" height="58.900000000000006" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="913.2586666666666" y="1584.8500000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)"><tspan x="913.2586666666666" dy="-10.450000000000001">REST HTTP / JSON [Bearer Token]</tspan><tspan x="913.2586666666666" dy="14.3">GET /couriers/{id}/availability (Validar asignación)</tspan><tspan x="913.2586666666666" dy="14.3">GET /internal/couriers/{id}/status (Validar EN_RUTA)</tspan></text>
+</g>
+<g class="edge-label" data-from="SHIPMENT" data-to="Referencia" data-label="&quot;N..1">
+  <rect x="-4" y="-5" width="34.876" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="13.437999999999999" y="10.15" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">&quot;N..1</text>
+</g>
+<g class="edge-label" data-from="C_REPO" data-to="Clona" data-label="&quot;1..1">
+  <rect x="323.7835" y="180.8" width="30.124000000000002" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="338.8455" y="195.95000000000002" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">&quot;1..1</text>
+</g>
+<g class="edge-label" data-from="USER" data-to="Posee" data-label="&quot;1..*">
+  <rect x="1055.148375" y="142.35" width="33.688" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="1071.992375" y="157.5" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">&quot;1..*</text>
+</g>
+<g class="edge-label" data-from="COURIER" data-to="Estado" data-label="&quot;1..1">
+  <rect x="1650.5990833333333" y="1757.5500000000002" width="30.124000000000002" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="1665.6610833333332" y="1772.7000000000003" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">&quot;1..1</text>
+</g>
+<g class="edge-label" data-from="CUSTOMER" data-to="Genera" data-label="&quot;1..*">
+  <rect x="843.771" y="1077.35" width="33.688" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="860.615" y="1092.5" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">&quot;1..*</text>
+</g>
+<g class="edge-label" data-from="SHIPMENT" data-to="Compone" data-label="&quot;1..2">
+  <rect x="948.3149999999999" y="830.0500000000001" width="33.688" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="965.159" y="845.2" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">&quot;1..2</text>
+</g>
+<g class="edge-label" data-from="SHIPMENT" data-to="Controlado" data-label="&quot;1..1">
+  <rect x="950.097" y="765.1500000000001" width="30.124000000000002" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="965.159" y="780.3000000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">&quot;1..1</text>
+</g>
+<g class="edge-label" data-from="SHIPMENT" data-to="Registra" data-label="&quot;1..*">
+  <rect x="948.3149999999999" y="986.65" width="33.688" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="965.159" y="1001.8" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">&quot;1..*</text>
+</g>
+<g class="edge-label" data-from="SHIPMENT" data-to="FEE" data-label="Usa para cotizar">
+  <rect x="917.13" y="911.8500000000001" width="96.05800000000002" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="965.159" y="927.0000000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">Usa para cotizar</text>
+</g>
+<g class="node" data-id="Bootstrap" data-label="Bootstrap" data-shape="rectangle">
+  <rect x="305.731" y="497.1000000000001" width="99.74799999999999" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="355.605" y="515.5500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Bootstrap</text>
+</g>
+<g class="node" data-id="V" data-label="V" data-shape="rectangle">
+  <rect x="40" y="40" width="60" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="70" y="58.45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">V</text>
+</g>
+<g class="node" data-id="Referencia" data-label="Referencia" data-shape="rectangle">
+  <rect x="120" y="40" width="107.158" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="173.579" y="58.45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Referencia</text>
+</g>
+<g class="node" data-id="C_REPO" data-label="config-repo
+(Git Repository)" data-shape="rectangle">
+  <rect x="273.478" y="84" width="131.611" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="339.2835" y="110.9" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="339.2835" dy="-3.9000000000000012">config-repo</tspan><tspan x="339.2835" dy="16.900000000000002">(Git Repository)</tspan></text>
+</g>
+<g class="node" data-id="C_SERVER" data-label="config-server
+(Spring Cloud Config)" data-shape="rectangle">
+  <rect x="273.478" y="311" width="164.95600000000002" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="355.956" y="337.9" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="355.956" dy="-3.9000000000000012">config-server</tspan><tspan x="355.956" dy="16.900000000000002">(Spring Cloud Config)</tspan></text>
+</g>
+<g class="node" data-id="Clona" data-label="Clona" data-shape="rectangle">
+  <rect x="301.2655" y="261.75" width="76.036" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="339.2835" y="280.2" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Clona</text>
+</g>
+<g class="node" data-id="AUTH_CTRL" data-label="AuthController / UserController
+• POST /auth/register
+• POST /auth/login
+• GET /auth/me
+• GET /auth/public-key" data-shape="rectangle">
+  <rect x="862.3073750000001" y="437.90000000000003" width="224.97699999999995" height="104.50000000000001" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="974.795875" y="490.15000000000003" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="974.795875" dy="-29.250000000000004">AuthController / UserController</tspan><tspan x="974.795875" dy="16.900000000000002">• POST /auth/register</tspan><tspan x="974.795875" dy="16.900000000000002">• POST /auth/login</tspan><tspan x="974.795875" dy="16.900000000000002">• GET /auth/me</tspan><tspan x="974.795875" dy="16.900000000000002">• GET /auth/public-key</tspan></text>
+</g>
+<g class="node" data-id="USER" data-label="User
+- UUID id
+- String email
+- String passwordHash
+- UUID customerId
+- UUID courierId" data-shape="rectangle">
+  <rect x="835.0773750000001" y="128" width="176.07099999999997" height="121.4" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="923.112875" y="188.7" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="923.112875" dy="-37.70000000000001">User</tspan><tspan x="923.112875" dy="16.900000000000002">- UUID id</tspan><tspan x="923.112875" dy="16.900000000000002">- String email</tspan><tspan x="923.112875" dy="16.900000000000002">- String passwordHash</tspan><tspan x="923.112875" dy="16.900000000000002">- UUID customerId</tspan><tspan x="923.112875" dy="16.900000000000002">- UUID courierId</tspan></text>
+</g>
+<g class="node" data-id="ROLE" data-label="«enum»
+Role
+• ADMIN
+• CLIENTE
+• REPARTIDOR" data-shape="rectangle">
+  <rect x="835.0773750000001" y="261.75" width="134.575" height="104.50000000000001" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="902.3648750000001" y="314" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="902.3648750000001" dy="-29.250000000000004">«enum»</tspan><tspan x="902.3648750000001" dy="16.900000000000002">Role</tspan><tspan x="902.3648750000001" dy="16.900000000000002">• ADMIN</tspan><tspan x="902.3648750000001" dy="16.900000000000002">• CLIENTE</tspan><tspan x="902.3648750000001" dy="16.900000000000002">• REPARTIDOR</tspan></text>
+</g>
+<g class="node" data-id="Posee" data-label="Posee" data-shape="rectangle">
+  <rect x="1132.836375" y="139.9" width="80.482" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1173.077375" y="158.35000000000002" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Posee</text>
+</g>
+<g class="node" data-id="COURIER_CTRL" data-label="CourierController / InternalCourierController
+• POST /api/v1/couriers
+• GET /api/v1/couriers/{id}/availability
+• GET /api/v1/internal/couriers/{id}/status" data-shape="rectangle">
+  <rect x="1096.9330833333333" y="1715.7500000000002" width="305.0049999999999" height="87.60000000000001" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1249.4355833333334" y="1759.5500000000002" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1249.4355833333334" dy="-20.8">CourierController / InternalCourierController</tspan><tspan x="1249.4355833333334" dy="16.900000000000002">• POST /api/v1/couriers</tspan><tspan x="1249.4355833333334" dy="16.900000000000002">• GET /api/v1/couriers/{id}/availability</tspan><tspan x="1249.4355833333334" dy="16.900000000000002">• GET /api/v1/internal/couriers/{id}/status</tspan></text>
+</g>
+<g class="node" data-id="COURIER" data-label="Courier
+- UUID id
+- String name
+- String vehicleType
+- CourierStatus status" data-shape="rectangle">
+  <rect x="1437.9380833333332" y="1721.3000000000002" width="168.661" height="104.50000000000001" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1522.2685833333333" y="1773.5500000000002" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1522.2685833333333" dy="-29.250000000000004">Courier</tspan><tspan x="1522.2685833333333" dy="16.900000000000002">- UUID id</tspan><tspan x="1522.2685833333333" dy="16.900000000000002">- String name</tspan><tspan x="1522.2685833333333" dy="16.900000000000002">- String vehicleType</tspan><tspan x="1522.2685833333333" dy="16.900000000000002">- CourierStatus status</tspan></text>
+</g>
+<g class="node" data-id="COURIER_STATUS" data-label="«enum»
+CourierStatus
+• ACTIVO
+• INACTIVO" data-shape="rectangle">
+  <rect x="1828.1690833333332" y="1721.3000000000002" width="124.94200000000001" height="87.60000000000001" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1890.6400833333332" y="1765.1000000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1890.6400833333332" dy="-20.8">«enum»</tspan><tspan x="1890.6400833333332" dy="16.900000000000002">CourierStatus</tspan><tspan x="1890.6400833333332" dy="16.900000000000002">• ACTIVO</tspan><tspan x="1890.6400833333332" dy="16.900000000000002">• INACTIVO</tspan></text>
+</g>
+<g class="node" data-id="Estado" data-label="Estado" data-shape="rectangle">
+  <rect x="1724.7230833333333" y="1755.1000000000001" width="83.446" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1766.4460833333333" y="1773.5500000000002" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Estado</text>
+</g>
+<g class="node" data-id="SHIPMENT_CTRL" data-label="ShipmentController / CustomerController
+• POST /api/v1/shipments
+• PUT /api/v1/shipments/{id}/courier
+• PATCH /api/v1/shipments/{id}/status
+• POST /api/v1/shipments/{id}/cancellation" data-shape="rectangle">
+  <rect x="724.08" y="1367.9" width="284.2569999999999" height="104.50000000000001" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="866.2085" y="1420.15" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="866.2085" dy="-29.250000000000004">ShipmentController / CustomerController</tspan><tspan x="866.2085" dy="16.900000000000002">• POST /api/v1/shipments</tspan><tspan x="866.2085" dy="16.900000000000002">• PUT /api/v1/shipments/{id}/courier</tspan><tspan x="866.2085" dy="16.900000000000002">• PATCH /api/v1/shipments/{id}/status</tspan><tspan x="866.2085" dy="16.900000000000002">• POST /api/v1/shipments/{id}/cancellation</tspan></text>
+</g>
+<g class="node" data-id="CUSTOMER" data-label="Customer
+- UUID id
+- String name
+- String email
+- String phone" data-shape="rectangle">
+  <rect x="677.052" y="1041.1" width="122.719" height="104.50000000000001" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="738.4115" y="1093.35" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="738.4115" dy="-29.250000000000004">Customer</tspan><tspan x="738.4115" dy="16.900000000000002">- UUID id</tspan><tspan x="738.4115" dy="16.900000000000002">- String name</tspan><tspan x="738.4115" dy="16.900000000000002">- String email</tspan><tspan x="738.4115" dy="16.900000000000002">- String phone</tspan></text>
+</g>
+<g class="node" data-id="SHIPMENT" data-label="Shipment (Aggregate Root)
+- UUID id
+- String trackingCode
+- BigDecimal fee
+- UUID courierId
+- ShipmentStatus status" data-shape="rectangle">
+  <rect x="677.052" y="867.1500000000001" width="196.07799999999997" height="121.4" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="775.091" y="927.8500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="775.091" dy="-37.70000000000001">Shipment (Aggregate Root)</tspan><tspan x="775.091" dy="16.900000000000002">- UUID id</tspan><tspan x="775.091" dy="16.900000000000002">- String trackingCode</tspan><tspan x="775.091" dy="16.900000000000002">- BigDecimal fee</tspan><tspan x="775.091" dy="16.900000000000002">- UUID courierId</tspan><tspan x="775.091" dy="16.900000000000002">- ShipmentStatus status</tspan></text>
+</g>
+<g class="node" data-id="ADDRESS" data-label="«Value Object»
+Address
+- String street
+- String number
+- String city
+- String postalCode" data-shape="rectangle">
+  <rect x="1027.8690000000001" y="1041.1" width="152.35899999999998" height="121.4" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1104.0485" y="1101.8" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1104.0485" dy="-37.70000000000001">«Value Object»</tspan><tspan x="1104.0485" dy="16.900000000000002">Address</tspan><tspan x="1104.0485" dy="16.900000000000002">- String street</tspan><tspan x="1104.0485" dy="16.900000000000002">- String number</tspan><tspan x="1104.0485" dy="16.900000000000002">- String city</tspan><tspan x="1104.0485" dy="16.900000000000002">- String postalCode</tspan></text>
+</g>
+<g class="node" data-id="STATUS" data-label="«enum / State Machine»
+ShipmentStatus
+• PENDIENTE
+• EN_RUTA
+• ENTREGADO
+• CANCELADO" data-shape="rectangle">
+  <rect x="677.052" y="1182.5" width="179.03499999999997" height="121.4" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="766.5695000000001" y="1243.2" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="766.5695000000001" dy="-37.70000000000001">«enum / State Machine»</tspan><tspan x="766.5695000000001" dy="16.900000000000002">ShipmentStatus</tspan><tspan x="766.5695000000001" dy="16.900000000000002">• PENDIENTE</tspan><tspan x="766.5695000000001" dy="16.900000000000002">• EN_RUTA</tspan><tspan x="766.5695000000001" dy="16.900000000000002">• ENTREGADO</tspan><tspan x="766.5695000000001" dy="16.900000000000002">• CANCELADO</tspan></text>
+</g>
+<g class="node" data-id="HISTORY" data-label="ShipmentStatusHistory (Append-Only)
+- UUID id
+- ShipmentStatus previousStatus
+- ShipmentStatus newStatus
+- Instant changedAt
+- String observation" data-shape="rectangle">
+  <rect x="876.087" y="1182.5" width="261.28599999999994" height="121.4" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1006.73" y="1243.2" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1006.73" dy="-37.70000000000001">ShipmentStatusHistory (Append-Only)</tspan><tspan x="1006.73" dy="16.900000000000002">- UUID id</tspan><tspan x="1006.73" dy="16.900000000000002">- ShipmentStatus previousStatus</tspan><tspan x="1006.73" dy="16.900000000000002">- ShipmentStatus newStatus</tspan><tspan x="1006.73" dy="16.900000000000002">- Instant changedAt</tspan><tspan x="1006.73" dy="16.900000000000002">- String observation</tspan></text>
+</g>
+<g class="node" data-id="FEE" data-label="«Domain Service»
+FeeCalculator
++calculate(weight, dim): fee" data-shape="rectangle">
+  <rect x="1057.188" y="892.5" width="194.59599999999998" height="70.7" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1154.486" y="927.85" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1154.486" dy="-12.350000000000001">«Domain Service»</tspan><tspan x="1154.486" dy="16.900000000000002">FeeCalculator</tspan><tspan x="1154.486" dy="16.900000000000002">+calculate(weight, dim): fee</tspan></text>
+</g>
+<g class="node" data-id="Genera" data-label="Genera" data-shape="rectangle">
+  <rect x="921.4590000000001" y="1074.9" width="86.41" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="964.6640000000001" y="1093.3500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Genera</text>
+</g>
+<g class="node" data-id="Compone" data-label="Compone" data-shape="rectangle">
+  <rect x="1057.188" y="827.6" width="96.78399999999999" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1105.5800000000002" y="846.0500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Compone</text>
+</g>
+<g class="node" data-id="Controlado" data-label="Controlado" data-shape="rectangle">
+  <rect x="1057.188" y="762.7" width="107.158" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1110.767" y="781.1500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Controlado</text>
+</g>
+<g class="node" data-id="Registra" data-label="Registra" data-shape="rectangle">
+  <rect x="1057.188" y="984.2" width="92.338" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1103.3570000000002" y="1002.6500000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Registra</text>
+</g>
+</svg>

@@ -16,4 +16,10 @@ Solo /actuator/health está expuesto, sin detalles/componentes. Las propiedades 
 
 `docker build -t config-server:local .`; ejecutar con CONFIG_GIT_URI y CONFIG_GIT_LABEL. Para Git de prueba montado: file:/fixture/ con permisos de escritura para UID 10001, porque JGit actualiza el índice/checkout local. Usar una copia descartable del fixture, nunca el checkout de trabajo. Con Git remoto, la copia local del servidor también debe ser escribible. La imagen separa build/runtime, excluye tests/secretos y usa UID 10001. CI construye la imagen y verifica HTTP con un Git local, sin servicios consumidores. La publicación de imágenes pertenece a otra issue.
 
-El PR #6 de Damián aborda la CI del servicio; esta corrección conserva su rama y limita cambios a los criterios iniciales de #1. [Contrato](https://github.com/Logitrack-Sa/shipment-service/blob/main/docs/sprint2/CONTRATOS.md) · [Tablero](https://github.com/orgs/Logitrack-Sa/projects/2).
+El perfil sprint3 agrega healthchecks para Gateway y Eureka usando la misma
+revision Git configurada. La suite verifica diez combinaciones de aplicacion/perfil,
+salud sin secretos, configuracion inexistente y fallo de arranque sin Git (13 pruebas).
+La imagen mantiene la cache auxiliar de JGit en /tmp/.config para que el usuario
+no root pueda escribirla sin depender de un directorio home del contenedor.
+
+[Contrato](https://github.com/Logitrack-Sa/shipment-service/blob/main/docs/sprint2/CONTRATOS.md) · [Tablero](https://github.com/orgs/Logitrack-Sa/projects/3).
