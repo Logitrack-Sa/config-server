@@ -19,7 +19,7 @@ import org.springframework.test.context.ActiveProfiles;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@ActiveProfiles("sprint3")
+@ActiveProfiles("discovery")
 class ConfigServerApplicationTests {
     @TempDir static Path fixture;
     @Autowired TestRestTemplate http;
