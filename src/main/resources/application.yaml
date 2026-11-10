@@ -27,6 +27,7 @@ spring:
           password: ${CONFIG_GIT_PASSWORD:}
           clone-on-start: true
           timeout: 5
+          refresh-rate: ${CONFIG_GIT_REFRESH_SECONDS:30}
 server:
   address: ${SERVER_ADDRESS:127.0.0.1}
   port: ${SERVER_PORT:8888}
