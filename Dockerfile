@@ -1,34 +1,14 @@
-# ETAPA 1: Construcción (Build) usando Eclipse Temurin (Reemplazo oficial de openjdk)
-FROM eclipse-temurin:25-jdk AS builder
+FROM maven:3-eclipse-temurin-25@sha256:9b5f82b7166db6112eb123ba310a9e010ec3fe95022ac0728f491121563dfbab AS build
+WORKDIR /build
+COPY pom.xml ./
+COPY src/main/ src/main/
+RUN mvn --batch-mode --no-transfer-progress -Dmaven.test.skip=true clean package
 
+FROM eclipse-temurin:25-jre@sha256:dbb43d81099eec91e0800226ed2296d03146ee7857165b95112372ad0d67e87f
+RUN groupadd --gid 10001 app && useradd --uid 10001 --gid 10001 app
 WORKDIR /app
-
-# Copiamos el wrapper de Maven y el archivo de configuración
-COPY .mvn/ .mvn/
-COPY mvnw pom.xml ./
-
-# Damos permisos de ejecución al wrapper de Maven en Linux
-RUN chmod +x ./mvnw
-
-# Descargamos las dependencias de Spring Boot
-RUN ./mvnw dependency:go-offline -B
-
-# Copiamos el código fuente
-COPY src ./src
-
-# Compilamos el proyecto para generar el archivo .jar
-RUN ./mvnw clean package -DskipTests
-
-# ETAPA 2: Producción (Runtime) con una imagen más ligera
-FROM eclipse-temurin:25-jre
-
-WORKDIR /app
-
-# Copiamos el .jar generado desde la etapa "builder"
-COPY --from=builder /app/target/config-server-0.0.1-SNAPSHOT.jar app.jar
-
-# Exponemos el puerto oficial asignado al Config Server
+COPY --from=build --chown=10001:10001 /build/target/config-server-0.0.1-SNAPSHOT.jar app.jar
+USER 10001:10001
+ENV SERVER_ADDRESS=0.0.0.0
 EXPOSE 8888
-
-# Comando para ejecutar la aplicación
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
